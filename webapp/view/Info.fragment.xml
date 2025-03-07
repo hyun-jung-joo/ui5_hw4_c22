@@ -1,0 +1,57 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:layout="sap.ui.layout"
+>
+    <Dialog
+        id="idDialog"
+        showHeader="false"
+    >
+        <content>
+            <form:SimpleForm
+                layout="ResponsiveGridLayout"
+                labelSpanL="6"
+                labelSpanS="6"
+                labelSpanM="6"
+                adjustLabelSpan="true"
+                singleContainerFullSize="true"
+            >
+                <form:title>
+                    <core:Title text="항공편 정보" />
+                </form:title>
+
+                <form:content>
+                    <Label text="항공사" />
+                    <Text text="{conn>CARRID}" />
+
+                    <Label text="항공편번호" />
+                    <Text text="{conn>CONNID}" />
+
+                    <Label text="비행시간" />
+                    <Text text="{conn>FLTIME}" />
+
+                    <Label text="출발시간" />
+                    <Text text="{conn>DEPTIME}" />
+
+                    <Label text="도착시간" />
+                    <Text text="{conn>ARRTIME}" />
+
+                    <Label text="비행거리" />
+                    <ObjectNumber
+                        number="{conn>DISTANCE}"
+                        unit="{conn>DISTID}"
+                        emphasized="false"
+                    />
+                </form:content>
+            </form:SimpleForm>
+        </content>
+
+        <beginButton>
+            <Button
+                text="닫기"
+                press=".onClose"
+            />
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>

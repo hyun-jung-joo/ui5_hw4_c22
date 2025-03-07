@@ -1,0 +1,64 @@
+<mvc:View
+    controllerName="sync.c22.hw4.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <Panel
+            headerText="Connection Table"
+            class="sapUiResponsiveMargin"
+            width="auto"
+        >
+            <!-- 
+        Connections 관련 테이블 생성 
+        출력할 필드 6개: Carrid, Connid, Countryfr, Cityfrom, Countryto, Cityto
+        items의 경로를 Connections.json의 Connection 내부로 지정하고 
+        ColumnListItem 안에서는 한 item의 필드들에 접근한다. 
+    -->
+            <Table
+                id="idConnTable"
+                items="{conn>/Connection}"
+            >
+                <!-- column들 정의 -->
+                <columns>
+                    <Column>
+                        <Text text="{i18n>fieldCarrid}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>fieldConnid}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>fieldCountryfr}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>fieldCityfrom}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>fieldCountryto}" />
+                    </Column>
+                    <Column>
+                        <Text text="{i18n>fieldCityto}" />
+                    </Column>
+                </columns>
+
+                <!-- 테이블 내용 정의 -->
+                <items>
+                    <ColumnListItem
+                        type="Active"
+                        press=".onOpenDialog"
+                    >
+                        <ObjectIdentifier title="{conn>CARRID}" />
+                        <Text text="{conn>CONNID}" />
+                        <Text text="{conn>COUNTRYFR}" />
+                        <Text text="{conn>CITYFROM}" />
+                        <Text text="{conn>COUNTRYTO}" />
+                        <Text text="{conn>CITYTO}" />
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </Panel>
+    </Page>
+</mvc:View>
