@@ -39,7 +39,9 @@
 
                     <Label text="비행거리" />
                     <ObjectNumber
-                        number="{conn>DISTANCE}"
+                        number="{
+                            path: 'conn>DISTANCE', 
+                            type : 'sap.ui.model.type.Float' }"
                         unit="{conn>DISTID}"
                         emphasized="false"
                     />
