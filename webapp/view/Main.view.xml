@@ -13,11 +13,11 @@
             width="auto"
         >
             <!-- 
-        Connections 관련 테이블 생성 
-        출력할 필드 6개: Carrid, Connid, Countryfr, Cityfrom, Countryto, Cityto
-        items의 경로를 Connections.json의 Connection 내부로 지정하고 
-        ColumnListItem 안에서는 한 item의 필드들에 접근한다. 
-    -->
+                Connections 관련 테이블 생성 
+                출력할 필드 6개: Carrid, Connid, Countryfr, Cityfrom, Countryto, Cityto
+                items의 경로를 Connections.json의 Connection 내부로 지정하고 
+                ColumnListItem 안에서는 한 item의 필드들에 접근한다. 
+            -->
             <Table
                 id="idConnTable"
                 items="{conn>/Connection}"
@@ -46,6 +46,9 @@
 
                 <!-- 테이블 내용 정의 -->
                 <items>
+                    <!-- 한 아이템을 클릭할 때 onOpenDialog(Task4)가 발생하도록 해놓았다.
+                        MessageToast로 출력하고 싶으면 onPress(Task3)메소드로 변경해주어야 한다.    
+                    -->
                     <ColumnListItem
                         type="Active"
                         press=".onOpenDialog"
