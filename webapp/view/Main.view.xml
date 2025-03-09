@@ -53,8 +53,9 @@
                         type="Active"
                         press=".onOpenDialog"
                     >
+                        <!-- CARRID, CONNID 는 Key Field -> ObjectIdentifier로 지정해준다. -->
                         <ObjectIdentifier title="{conn>CARRID}" />
-                        <Text text="{conn>CONNID}" />
+                        <ObjectIdentifier title="{conn>CONNID}" />
                         <Text text="{conn>COUNTRYFR}" />
                         <Text text="{conn>CITYFROM}" />
                         <Text text="{conn>COUNTRYTO}" />
